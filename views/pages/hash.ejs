@@ -1,0 +1,62 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+<div class="row">
+    <div class="col-sm-12">    
+        <div class="jumbotron">
+            <h1>Detailed Block Analyse</h1>
+            
+            
+            
+                        <table border="1">
+<tr><th>Previous Hash</th>
+<% data.forEach(function(item, index){ %>
+<tr>
+    
+    <td><a href="hash?hash=<%= item.previoushash %>"><%= item.previoushash %></a></td>
+
+</tr>
+<% }); %>
+</table>
+            
+            
+            
+            
+            <table border="1">
+<tr><th>BlockNo.</th><th>Hash</th><th>Timestamp</th><th>Nonce</th><th>Transaction Count</th>
+<% data.forEach(function(item, index){ %>
+<tr>
+    <td><%= item.blockno %></td>
+    <td><a href="hash?hash=<%= item.hash %>"><%= item.hash %></a></td>
+    <td><%= item.timestamp %></td>
+    <td><%= item.nonce %></td>
+    <td><%= item.txcount %></td>
+</tr>
+<% }); %>
+</table>
+            
+        </div>
+    </div>
+
+
+
+</div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
